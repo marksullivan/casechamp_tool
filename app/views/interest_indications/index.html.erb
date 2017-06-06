@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>
+    Interest indications
+    <a href="/interest_indications/new" class="btn btn-lg btn-success">New Interest indication</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Interest</th>
+        <th>Competition name</th>
+        <th>Email address</th>
+        <th>End date</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @interest_indications.each do |interest_indication| %>
+      <tr>
+        <td><%= interest_indication.interest %></td>
+        <td><%= interest_indication.competition_name %></td>
+        <td><%= interest_indication.email_address %></td>
+        <td><%= interest_indication.end_date %></td>
+        <td>
+          <a href="/interest_indications/<%= interest_indication.id %>" class="btn btn-primary">Show</a>
+          <a href="/interest_indications/<%= interest_indication.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_interest_indication/<%= interest_indication.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
